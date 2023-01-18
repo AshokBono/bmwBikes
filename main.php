@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(isset($_SESSION['username']))
+        // header('location:login.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,8 +52,13 @@
                             <li><a href="#featured-models-id">Products</a></li>
                             <li><a href="#news-id">News</a></li>
                             <li><a href="#feedback-id">Feedback</a></li>
-                            <li><button class="navbar-contact"><a href="C:/xampp/htdocs/phpForm/login.php">Login</a></button></li>
-
+                            <?php
+                                if(isset($_SESSION['username'])){
+                                echo "<li><button>Login</a></button></li>";
+                                }
+                            ?>
+                            <!-- <li><button class="navbar-contact"><a href="./phpForm/login.php">Login</a></button></li> -->
+                            <!-- ?> -->
                     </section>
                 </div>
                 <div class="content">
@@ -81,8 +92,8 @@
                                 </h2>
                                 <p class="models-content">BMW G 310 R is an intuitive, agile ride thanks to the
                                     optimized engine with Ride by Wire and slipper clutch. Experience the
-                                    maneuverability, easy handling, and sportiness of the G 310 R and use it to push to
-                                    new boundaries every single day – simply put: #NeverStopChallenging.</p>
+                                    maneuverability, easy handling, and sportiness of the G 310 R and use it to push to new boundaries every single day – simply put:#NeverStopChallenging.
+                                </p>
 
                             </div>
                             <div class="models-buttons">
